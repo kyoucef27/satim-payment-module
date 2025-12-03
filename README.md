@@ -1,27 +1,29 @@
-# SATIM Payment Module for Algeria 🇩🇿
+# SATIM Payment Module
 
 [![npm version](https://img.shields.io/npm/v/@cibpay/satim-payment-module.svg)](https://www.npmjs.com/package/@cibpay/satim-payment-module)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 
-Official TypeScript/JavaScript module for integrating SATIM (GIE Monétique) payment gateway in Algeria. Supports CIB and Edahabia card payments.
+A comprehensive TypeScript/JavaScript module for integrating SATIM (GIE Monétique) payment gateway in Algeria. Supports CIB and Edahabia card payments with full type safety and security.
 
-## 🚀 Features
+## Features
 
-- ✅ **Complete SATIM API Integration** - Register, verify, refund payments
-- ✅ **TypeScript Native** - Full type safety and IntelliSense support
-- ✅ **Sandbox & Production** - Easy environment switching
-- ✅ **Security First** - No sensitive data leaks, HTTPS enforcement
-- ✅ **Test Cards Included** - 15+ test cards for all scenarios
-- ✅ **Express Ready** - Drop-in middleware for webhooks
+- Complete SATIM REST API integration (register, verify, refund)
+- Full TypeScript support with type definitions
+- Sandbox and production environment support
+- Built-in security features and HTTPS enforcement
+- Comprehensive test card library for development
+- Express.js middleware for webhook handling
+- Detailed error handling with localized messages
+- PCI-DSS compliant implementation
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install @cibpay/satim-payment-module
 ```
 
-## 🔑 Quick Start
+## Quick Start
 
 ### 1. Configuration
 
@@ -50,7 +52,7 @@ import { SatimClient } from '@cibpay/satim-payment-module';
 const client = SatimClient.fromEnv();
 ```
 
-## 🌐 API Routes
+## API Routes
 
 ### POST `/payments/create`
 
@@ -271,7 +273,7 @@ app.get('/payment/return', async (req, res) => {
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Sandbox Mode
 
@@ -281,25 +283,25 @@ Set `NODE_ENV=sandbox` in your `.env` file.
 
 | Card Number         | CVV | Password | Result                    |
 |---------------------|-----|----------|---------------------------|
-| 6280581110007215    | 373 | 123456   | ✅ Success                |
-| 6280581110006712    | 897 | 123456   | ❌ Blocked                |
-| 6280580610061110    | 260 | 123456   | ❌ Insufficient balance   |
-| 6280581110006514    | 205 | 123456   | ❌ Wrong CVV              |
+| 6280581110007215    | 373 | 123456   | Success                   |
+| 6280581110006712    | 897 | 123456   | Blocked                   |
+| 6280580610061110    | 260 | 123456   | Insufficient balance      |
+| 6280581110006514    | 205 | 123456   | Wrong CVV                 |
 
 **Expiry Date:** 01/2027 for all test cards
 
 ---
 
-## 🔒 Security
+## Security
 
-- ✅ Never expose `.env` file
-- ✅ Never log credentials
-- ✅ All communication over HTTPS
-- ✅ PCI compliant (no card data touches your server)
+- Never expose `.env` file
+- Never log credentials
+- All communication over HTTPS
+- PCI compliant (no card data touches your server)
 
 ---
 
-## 📝 Payment Flow
+## Payment Flow
 
 ```
 1. Customer clicks "Pay"
@@ -319,7 +321,7 @@ Set `NODE_ENV=sandbox` in your `.env` file.
 
 ---
 
-## 📊 Error Handling
+## Error Handling
 
 ```typescript
 try {
@@ -346,7 +348,7 @@ try {
 
 ---
 
-## 📚 Full Example
+## Full Example
 
 ```typescript
 import express from 'express';
@@ -398,9 +400,9 @@ app.get('/payment/return', async (req, res) => {
     const verification = await client.verifyPayment(orderId);
     
     if (verification.status === 'completed') {
-      res.send('Payment successful! ✅');
+      res.send('Payment successful!');
     } else {
-      res.send('Payment failed ❌');
+      res.send('Payment failed');
     }
   } catch (error) {
     res.status(400).send('Error verifying payment');
@@ -414,7 +416,7 @@ app.listen(3000, () => {
 
 ---
 
-## 📞 Support
+## Support
 
 - **SATIM Hotline:** 3020 3020 (Algeria)
 - **Documentation:** [GitHub Repository](https://github.com/yourusername/satim-payment-module)
@@ -422,13 +424,13 @@ app.listen(3000, () => {
 
 ---
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details
 
 ---
 
-## ⚠️ Important Notes
+## Important Notes
 
 1. **Amounts:** Always in centimes (multiply by 100)
 2. **Minimum:** 5000 centimes (50 DZD)
@@ -438,4 +440,4 @@ MIT License - see LICENSE file for details
 
 ---
 
-Made with ❤️ for Algerian developers
+Built for Algerian developers
