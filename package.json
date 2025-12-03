@@ -1,5 +1,5 @@
 {
-  "name": "@cibpay/satim-payment-module",
+  "name": "@kyoucef27/satim-payment-module",
   "version": "1.0.0",
   "description": "SATIM-certified payment module for secure payment processing in TypeScript",
   "main": "dist/index.js",

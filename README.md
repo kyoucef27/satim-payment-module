@@ -1,6 +1,6 @@
 # SATIM Payment Module
 
-[![npm version](https://img.shields.io/npm/v/@cibpay/satim-payment-module.svg)](https://www.npmjs.com/package/@cibpay/satim-payment-module)
+[![npm version](https://img.shields.io/npm/v/@kyoucef27/satim-payment-module.svg)](https://www.npmjs.com/package/@kyoucef27/satim-payment-module)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 
@@ -20,7 +20,7 @@ A comprehensive TypeScript/JavaScript module for integrating SATIM (GIE Monétiq
 ## Installation
 
 ```bash
-npm install @cibpay/satim-payment-module
+npm install @kyoucef27/satim-payment-module
 ```
 
 ## Quick Start
@@ -46,7 +46,7 @@ NODE_ENV=sandbox  # or production
 ### 2. Initialize Client
 
 ```typescript
-import { SatimClient } from '@cibpay/satim-payment-module';
+import { SatimClient } from '@kyoucef27/satim-payment-module';e';
 
 // Load from environment variables
 const client = SatimClient.fromEnv();
